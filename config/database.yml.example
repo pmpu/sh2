@@ -12,11 +12,11 @@
 default: &default
   adapter: postgresql
   host: localhost
-<<<<<<< HEAD:config/database.yml
+  HEAD:config/database.yml
   username: hannakondratyuk
 =======
   username: YOUR_DB_USERNAME(MAYBE MAC/WINDOWS username)
->>>>>>> 8b1a60d1501ad9e193c01cbc52ba34ac69392a40:config/database.yml.example
+ 8b1a60d1501ad9e193c01cbc52ba34ac69392a40:config/database.yml.example
   database: sh2
 
 development:
