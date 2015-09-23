@@ -12,7 +12,7 @@
 default: &default
   adapter: postgresql
   host: localhost
-  username: George
+  username: hannakondratyuk
   database: sh2
 
 development:
