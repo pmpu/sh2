@@ -41,6 +41,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 
+
+# to serve static assets in production
+gem 'rails_12factor', group: :production
+
 #gem 'rename'
 
 # Use ActiveModel has_secure_password
