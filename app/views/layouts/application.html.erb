@@ -10,7 +10,106 @@
 
 <body class="<%= controller_name %>_ctrl <%= action_name %>_view">
 
-<%= yield %>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <header class="mdl-layout__header mdl-layout__header--waterfall">
+
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">serverhouse2</span></span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="sample"
+                     id="fixed-header-drawer-exp" />
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <%= yield %>
+        </div>
+
+        <!-- Add spacer to push Footer down when not enough content -->
+        <div class="mdl-layout-spacer"></div>
+
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer__middle-section">
+
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Features</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Updates</a></li>
+              </ul>
+            </div>
+
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Details</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Specs</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Resources</a></li>
+              </ul>
+            </div>
+
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">Technology</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Patterns</a></li>
+                <li><a href="#">Usage</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contracts</a></li>
+              </ul>
+            </div>
+
+            <div class="mdl-mega-footer__drop-down-section">
+              <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer__heading">FAQ</h1>
+              <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Questions</a></li>
+                <li><a href="#">Answers</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="mdl-mega-footer__bottom-section">
+            <div class="mdl-logo">Title</div>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+
+        </footer>
+      </main>
+    </div>
 
 </body>
 </html>

@@ -83,6 +83,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    material_design_lite-rails (1.0.3)
+      railties (>= 3.1)
+    material_icons (1.0.0)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.8.0)
@@ -188,6 +191,8 @@ DEPENDENCIES
   gon
   jbuilder (~> 2.0)
   jquery-rails
+  material_design_lite-rails
+  material_icons
   omniauth
   omniauth-facebook
   omniauth-vkontakte
