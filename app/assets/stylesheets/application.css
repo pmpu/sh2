@@ -12,8 +12,9 @@
  *
  *= require material
  *= require material_icons
- *= require_tree .
+ *
  *= require_self
+ *= require_tree .
  */
 .mdl-layout__content {
   display: -webkit-flex;
