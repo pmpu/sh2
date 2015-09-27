@@ -99,6 +99,8 @@ html, body {
   justify-content: center; }
 
 .mdl-demo section > .section__play-btn {
+    display: flex;
+    align-items: center;
   min-height: 200px; }
 
 .mdl-demo section > header > .material-icons {
