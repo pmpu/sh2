@@ -20,9 +20,18 @@ gem 'omniauth-vkontakte'
 # To serve static assets in production
 gem 'rails_12factor', group: :production
 
+# Active Admin
+gem 'activeadmin', github: 'activeadmin'
+
+
+### Middle
 
 # for passing data to JS
 gem 'gon'
+
+
+
+
 
 
 ### Front-End
