@@ -1,5 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -10,31 +9,21 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
+ *
  *= require material
  *= require material_icons
-
+ *
  *= require_self
- *= require_tree ./main
+ *= require_tree .
  */
+.mdl-layout__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
 
+.mdl-textfield__input {
+  color: white;
+  background: transparent; }
 
-$font-stack:    Helvetica, sans-serif
-$primary-color: gray
-
-
-
-
-
-.mdl-layout__content
-  display: -webkit-flex
-  display: flex
-  -webkit-flex-direction: column
-  flex-direction: column
-
-
-.mdl-textfield__input
-  color: white
-  background: transparent
-
-
+/*# sourceMappingURL=application.css.map */
