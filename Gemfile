@@ -23,14 +23,15 @@ gem 'rails_12factor', group: :production
 # Active Admin
 gem 'activeadmin', github: 'activeadmin'
 
+# Paperclip to manage attachments (for CKEditor)
+gem 'paperclip'
+
+
 
 ### Middle
 
 # for passing data to JS
 gem 'gon'
-
-
-
 
 
 
@@ -50,6 +51,10 @@ gem 'material_icons'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+# CKEditor is a WYSIWYG text editor
+gem 'ckeditor'
+
 
 
 
