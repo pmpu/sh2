@@ -1,24 +1,36 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-    <i class="material-icons">play_circle_filled</i>
-  </header>
-  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+
+  <% if defined?side_content %>
+      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+        <% case side_content[:type] %>
+            <% when :image %>
+                <img src="<%=side_content[:url]%>" />
+            <% else %>
+
+        <% end %>
+      </header>
+  <% end %>
+
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--5-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card__supporting-text">
-      <h4>Hello!</h4>
-      Hello, <%= current_user.email%>
+      <h4><%=title%></h4>
+      <%=body%>
     </div>
-    <div class="mdl-card__actions">
-      <a href="#" class="mdl-button">Read our features</a>
-    </div>
+    <% if defined?bottom_link %>
+        <div class="mdl-card__actions">
+          <a href="<%=bottom_link[:url]%>" class="mdl-button"><%=bottom_link[:title]%></a>
+        </div>
+    <% end %>
   </div>
 
-  <% if (defined?menu and menu and defined?menu_items) %>
-      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+  <% if (defined?context_menu) %>
+      <% random_id = ('0'..'z').to_a.shuffle.first(8).join %>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= random_id %>">
         <i class="material-icons">more_vert</i>
       </button>
-      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-        <% menu_items.each do |item| %>
-            <li class="mdl-menu__item"><%=item[:title] %></li>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="<%= random_id %>">
+        <% context_menu.each do |item| %>
+            <li <%=item[:disabled]?"disabled":""%> class="mdl-menu__item"><%=item[:title] %></li>
         <% end %>
       </ul>
   <% end %>
