@@ -7,7 +7,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.brown-red.min.css" />
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.brown-red.min.css"
+        data-turbolinks-track="true"/>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,5 +67,10 @@
     </footer>
   </main>
 </div>
+
+<script>
+    // fix MDL to wok with turbolinks
+    componentHandler.upgradeDom();
+</script>
 </body>
 </html>
