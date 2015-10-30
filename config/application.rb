@@ -27,5 +27,7 @@ module Sh2
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
+
+
   end
 end

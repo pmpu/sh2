@@ -34,23 +34,24 @@
 <body class="<%= main_path %> <%= controller_name %>_ctrl <%= action_name %>_view mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-    </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-      <h3>serverhouse 2</h3>
-    </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-    </div>
     <nav class="sh-top-nav mdl-navigation mdl-color--primary-dark">
       <a href="/news" class="mdl-navigation__link news">NEWS</a>
       <a href="#overview" class="mdl-navigation__link">FEATURES</a>
       <a href="#overview" class="mdl-navigation__link">DETAILS</a>
 
       <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-js-ripple-effect mdl-button&#45;&#45;colored mdl-shadow&#45;&#45;4dp mdl-color&#45;&#45;accent" id="add">-->
-        <!--<i class="material-icons" role="presentation">add</i>-->
-        <!--<span class="visuallyhidden">Add</span>-->
+      <!--<i class="material-icons" role="presentation">add</i>-->
+      <!--<span class="visuallyhidden">Add</span>-->
       <!--</button>-->
     </nav>
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    </div>
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+      <h3><%= Sh2::Application.config.app_name %></h3>
+    </div>
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    </div>
+
   </header>
   <main class="mdl-layout__content">
 
@@ -58,7 +59,7 @@
 
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">serverhouse 2</div>
+        <div class="mdl-logo"><%= Sh2::Application.config.app_name %></div>
         <ul class="mdl-mini-footer__link-list">
           <li><a href="#">Help</a></li>
           <li><a href="#">Privacy & Terms</a></li>
