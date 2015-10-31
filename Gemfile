@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ### Back-End
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
@@ -23,8 +25,10 @@ gem 'rails_12factor', group: :production
 # Active Admin
 gem 'activeadmin', github: 'activeadmin'
 
-# Paperclip to manage attachments (for CKEditor)
+# Paperclip to manage files
 gem 'paperclip'
+gem 'russian'
+gem 'transliterate_paperclip', git: 'https://github.com/PoloniumArts/transliterate_paperclip.git'
 
 
 

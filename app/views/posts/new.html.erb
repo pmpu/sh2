@@ -1,10 +1,14 @@
-
+<% if @post.errors.full_messages.any? %>
+    <% @post.errors.full_messages.each do |error_message| %>
+        <%= error_message  %> <br />
+    <% end %>
+<% end %>
 
 <%= form_for (@post) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title%><br>
     <%= f.label :body %><br>
-    <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'ru', :toolbar => 'mini'} %>
+    <%= f.cktext_area :body, :class => 'someclass', :ckeditor => {:language => 'ru'} %>
 
     <%= f.submit %>
 <% end %>

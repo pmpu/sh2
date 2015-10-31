@@ -7,6 +7,22 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.post_gallery = PostGallery.new
+    img = PostGalleryImage.new
+    img.image.url
+
+
+
+    @post.post_gallery.post_gallery_images << img
+
+
+    render :json => {
+                      :has_gallery => @post.post_gallery!=nil,
+                      :gallery_images => @post.post_gallery.post_gallery_images,
+                      :url => img.image.url,
+                      :img_errors => img.errors
+
+                  }.to_json
   end
 
   def new
@@ -15,8 +31,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-    redirect_to @post
+
+
+    if @post.valid?
+      @post.save
+      redirect_to @post
+    else
+      render :action => :new
+    end
   end
 
   private
