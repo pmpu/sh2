@@ -35,10 +35,24 @@ class PostsController < ApplicationController
 
     if @post.valid?
       @post.save
+
       redirect_to @post
     else
       render :action => :new
     end
+  end
+
+
+  def destroy
+    if current_user[:role] > 0
+      @post = Post.find(params[:id])
+      @post.destroy
+    else
+      flash[:error] = "You can'not delete posts"
+    end
+
+    redirect_to posts_path
+
   end
 
   private

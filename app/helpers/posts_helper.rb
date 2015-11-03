@@ -11,10 +11,20 @@ module PostsHelper
                                             :title => "Read more",
                                             :url => "http://google.com/"
                                         },
-                                        :context_menu  => [
-                                            {:title => "Edit", :link => "/edit"},
-                                            {:title => "Delete", :link => "/delete"}
-                                        ]
+                                        :context_menu  => {
+                                            :min_role => 1,
+                                            :items => [
+                                                {:link => link_to('<li class="mdl-menu__item">Edit</li>'.html_safe,
+                                                                  post),
+                                                 :min_role => 1
+                                                },
+                                                {:link => link_to('<li class="mdl-menu__item">Delete</li>'.html_safe,
+                                                                  post, method: :delete),
+                                                 :min_role => 1
+                                                }
+                                            ]
+                                        }
+
                                     }
   end
 end

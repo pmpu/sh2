@@ -1,4 +1,4 @@
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+<section class="sh_card section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 
   <% if defined?side_content %>
       <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
@@ -23,14 +23,16 @@
     <% end %>
   </div>
 
-  <% if (defined?context_menu) %>
+  <% if defined?context_menu and current_user_role >= context_menu[:min_role] %>
       <% random_id = ('0'..'z').to_a.shuffle.first(8).join %>
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= random_id %>">
         <i class="material-icons">more_vert</i>
       </button>
-      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="<%= random_id %>">
-        <% context_menu.each do |item| %>
-            <li <%=item[:disabled]?"disabled":""%> class="mdl-menu__item"><%=item[:title] %></li>
+      <ul class="sh_card_context_menu mdl-menu mdl-js-menu mdl-menu--bottom-right" for="<%= random_id %>">
+        <% context_menu[:items].each do |item| %>
+            <% if current_user_role >= item[:min_role] %>
+                <%=item[:link]%>
+            <% end %>
         <% end %>
       </ul>
   <% end %>

@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_user_role
+    current_user[:role]
+  end
+  helper_method :current_user_role
+
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end

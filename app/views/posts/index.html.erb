@@ -1,4 +1,8 @@
-<div class="mdl-layout__tab-panel is-active" id="overview">
+<div class="mdl-layout__tab-panel is-active">
+
+    <% if flash[:error] %>
+      <div class="msg_error"><%= flash[:error] %></div>
+    <% end %>
 
 
     <% @posts.each do |post| %>
