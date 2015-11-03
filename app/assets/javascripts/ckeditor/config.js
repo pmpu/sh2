@@ -1,6 +1,7 @@
 CKEDITOR.editorConfig = function (config) {
 
-    config.extraPlugins = 'popup,filebrowser,uploadimage';
+    config.extraPlugins = 'popup,uploadimage,image,image2,uploadwidget,widget,' +
+        'lineutils,clipboard,dialog,dialogui,filetools,notificationaggregator,notification,toolbar,button';
 
 
     //
